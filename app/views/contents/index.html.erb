@@ -1,11 +1,11 @@
 <h1>Contents#index</h1>
-<p>Find me in app/views/contents/index.html.erb</p>
 <%= link_to '새 글 쓰기', new_content_path %>
 <br>
 <br>
 <% @contents.each do |content| %>
     <!--<a href='/contents/<%#= content.id %>' style='text-decoration: none; color: black'><%#= content.title %></a>-->
     <a href='<%= content_path(content) %>' style='text-decoration: none; color: black'><%= content.title %></a>
+    <%= content.user.email %>
     <%= link_to '수정하기', edit_content_path(content) %>
     <%= link_to '삭제하기', content, method: :delete, data: {confirm: '정말 삭제하시겠습니까?' } %>    
     <br>

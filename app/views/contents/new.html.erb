@@ -1,6 +1,6 @@
 <h1>Contents#new</h1>
-<p>Find me in app/views/contents/new.html.erb</p>
 <%= form_for @content do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.label :title, '제목' %>
     <%= f.text_field :title %><br>
     <%= f.label :body, '내용' %>

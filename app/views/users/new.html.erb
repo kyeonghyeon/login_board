@@ -1,0 +1,8 @@
+<h1>회원가입</h1>
+<%= form_for @user do |f| %>
+    Email: <%= f.email_field :email %><br>
+    Password: <%= f.password_field :password %><br>
+    Password Confirmation: <%= f.password_field :password_confirmation %><br>
+    <%= f.submit '회원가입' %>
+
+<% end %>
