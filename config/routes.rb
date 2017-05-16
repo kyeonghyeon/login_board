@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :edit]
   resources :sessions, only: [:new, :create, :destroy] 
 
 
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :comments, shallow: true
   end
 
+  get 'users/edit_mod'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

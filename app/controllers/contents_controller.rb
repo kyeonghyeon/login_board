@@ -1,6 +1,7 @@
 class ContentsController < ApplicationController
   
   before_action :authorize, only: [:new, :edit, :update, :destroy]
+  load_and_authorize_resource # 하나하나 할 필요 없이 한 번에 권한 부여
   
   def index
     @contents = Content.all
@@ -24,6 +25,7 @@ class ContentsController < ApplicationController
 
   def edit
     @content = Content.find(params[:id])
+    authorize! :update, @content
   end
 
   def update
